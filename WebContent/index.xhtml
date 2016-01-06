@@ -47,18 +47,32 @@
     
 			    <h:form>
 					<h:dataTable var="vaga" value="#{vagaBean.listaTodas()}" class="table table-bordered table-striped">
-								
+						
 						<h:column>
+						
+							<f:facet name="header">	
+								<h:outputText value="Vagas" style="color:#045FB4; font-size:20px" />
+							</f:facet>	
 							<h:commandLink immediate="true" action="/visualiza.xhtml" value="#{vaga.titulo}">
 								 <f:setPropertyActionListener value="#{vaga}" target="#{vagaBean.vaga}"/>
 							</h:commandLink>
+							
 						</h:column>
 						
+						
 						<h:column>
+							
+							<f:facet name="header">	
+								<h:outputText value="Empresa" style="color:#045FB4; font-size:20px" />
+							</f:facet>	
 							<h:outputLabel value="#{vaga.empresa}" />
 						</h:column>
 									
 						<h:column >
+						
+							<f:facet name="header">	
+								<h:outputText value="Publicada em:" style="color:#045FB4; font-size:20px"/>
+							</f:facet>	
 							<h:outputLabel value="#{vaga.dataAnuncio}">
 								<f:convertDateTime pattern="dd/MM/yyyy"/>
 							</h:outputLabel>
